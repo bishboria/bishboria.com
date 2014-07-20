@@ -8,4 +8,4 @@ main = do
     port <- getEnv "PORT"
     scotty (read port) $
       get "/" $
-        text "Hello, world!"
+        file "index.html"
