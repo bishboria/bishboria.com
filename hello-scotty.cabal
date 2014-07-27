@@ -13,4 +13,8 @@ executable hello-scotty
                                 -threaded
   build-depends:
     base                        >= 4.6 && < 4.8,
-    scotty                      >= 0.7 && < 0.8
+    scotty                      >= 0.7 && < 0.8,
+    directory                   >= 1.2.1,
+    transformers                == 0.3.0.0,
+    text                        == 1.1.1.3,
+    filepath                    == 1.3.0.2

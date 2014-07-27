@@ -1,16 +1,22 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+import Control.Monad.IO.Class
+import Data.Monoid (mconcat)
+import Data.Text
+import System.Directory
 import System.Environment
+import System.FilePath
 import Web.Scotty
 
 main :: IO ()
 main = do
-    port <- getEnv "PORT"
+    port  <- getEnv "PORT"
 
     scotty (read port) $ do
         get "/" $ do
-            file "index.html"
+            file "static/index.html"
 
-        get "/posts/:post" $ do
-            post <- param "post"
-            file (post ++ ".html")
+        get "/style.css" $ do
+            file "static/style.css"
+
+        notFound $ file "static/404.html"
