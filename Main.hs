@@ -19,4 +19,16 @@ main = do
         get "/style.css" $ do
             file "static/style.css"
 
+        get "/blog/:post" $ do
+            p     <- param "post"
+            files <- allPosts
+            if   p `elem` files
+            then file ("static/posts/" ++ p ++ ".html")
+            else file "static/404.html"
+
         notFound $ file "static/404.html"
+
+allPosts = do
+    files <- liftIO $ getDirectoryContents "static/posts"
+    let fs = Prelude.map takeBaseName files
+    return fs
