@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="bishboria">
+    <title>bishboria.com</title>
+    <link href="/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <a href="/"><h1>bishboria</h1></a>
+        <ul>
+          <li><a href="https://twitter.com/bishboria">Twitter</a></li>
+          <li><a href="https://github.com/bishboria">Github</a></li>
+          <li><a href="mailto:bishboria@gmail.com">Mail</a></li>
+        </ul>
+      </header>
+
+      <section>
+        <h3>Markdown math</h3>
+        <p>
+          It is quite easy to use latex commands in your content which then produces nice mathematics.
+        </p>
+        <ul>
+          <li>install <a href="http://johnmacfarlane.net/pandoc/installing.html">Pandoc</a></li>
+          <li>On the command line run: <code>pandoc -f markdown -t html5 -s --mathml input-file.md -o output-file.html</code></li>
+          <ul>
+            <li><code>-f</code> source format</li>
+            <li><code>-t</code> destination format</li>
+            <li><code>-s</code> standalone file (with correct headers, etc)</li>
+            <li><code>--mathml</code> convert TeX math to MathML</li>
+            <li><code>-o</code> destination file name</li>
+          </ul>
+        </ul>
+        <p>
+          As an example, inline math like <code>$ x^2 $</code> turns into <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>x</mi><mn>2</mn></msup></math>. Block math like
+          <pre><code>$$ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</code></pre>
+          becomes
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow></math>
+        </p>
+        <p>
+          Go <a href="http://anorien.csc.warwick.ac.uk/mirrors/CTAN/info/symbols/math/symbols.pdf">here</a> for a summary of symbols or that could be used. A <a href="http://anorien.csc.warwick.ac.uk/mirrors/CTAN/info/symbols/comprehensive/symbols-a4.pdf">comprehensive list</a> is also available.
+        </p>
+      </section>
+
+    </div>
+  </body>
+</html>
